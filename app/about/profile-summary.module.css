@@ -1,0 +1,112 @@
+.profileSummary {
+  max-width: 600px;
+  margin-top: 19px;
+}
+
+.shortBio {
+  max-width: 570px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.profileActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+  margin-top: 18px;
+}
+
+.resumeButton,
+.workLink,
+.contactLink {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  padding: 0 11px;
+  font-size: 9px;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease,
+    transform 150ms ease;
+}
+
+.resumeButton {
+  border-color: var(--lime);
+  background: var(--lime);
+  color: var(--lime-ink);
+  font-weight: 600;
+}
+
+.resumeButton:hover,
+.workLink:hover,
+.contactLink:hover {
+  transform: translateY(-1px);
+}
+
+.resumeButton:hover {
+  filter: brightness(1.05);
+}
+
+.workLink,
+.contactLink {
+  background: color-mix(in srgb, var(--surface) 78%, transparent);
+  color: var(--text);
+}
+
+.workLink:hover,
+.contactLink:hover {
+  border-color: var(--blue);
+  background: var(--blue-soft);
+  color: var(--blue);
+}
+
+.resumeNote {
+  margin: 9px 0 0;
+  color: var(--subtle);
+  font-size: 8px;
+  line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+  .profileSummary {
+    margin-top: 15px;
+  }
+
+  .shortBio {
+    font-size: 11px;
+  }
+
+  .profileActions {
+    gap: 7px;
+  }
+
+  .resumeButton,
+  .workLink,
+  .contactLink {
+    min-height: 36px;
+    padding-inline: 9px;
+    font-size: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resumeButton,
+  .workLink,
+  .contactLink {
+    transition: none;
+  }
+
+  .resumeButton:hover,
+  .workLink:hover,
+  .contactLink:hover {
+    transform: none;
+  }
+}

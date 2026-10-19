@@ -1,0 +1,500 @@
+.detailPage {
+  position: relative;
+  isolation: isolate;
+  min-height: calc(100vh - 140px);
+  overflow: clip;
+  padding: 25px 0 64px;
+}
+
+.pageGlow {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 68% 8%, color-mix(in srgb, var(--blue) 15%, transparent), transparent 36%),
+    radial-gradient(ellipse at 28% 5%, color-mix(in srgb, var(--lime) 12%, transparent), transparent 35%);
+  pointer-events: none;
+}
+
+.content {
+  width: min(100% - 72px, 1200px);
+  margin-inline: auto;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.breadcrumbs a:hover,
+.breadcrumbs [aria-current="page"] {
+  color: var(--text);
+}
+
+.breadcrumbs > span:not([aria-current]) {
+  color: var(--subtle);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.8fr);
+  align-items: center;
+  gap: 40px;
+  padding: 45px 0 38px;
+}
+
+.heroCopy {
+  min-width: 0;
+}
+
+.categoryPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 30px;
+  padding: 0 12px;
+  border: 1px solid color-mix(in srgb, var(--lime) 38%, var(--line));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--lime) 13%, var(--surface));
+  color: var(--lime);
+  font-size: 11px;
+}
+
+.hero h1 {
+  margin: 20px 0 0;
+  font-size: clamp(38px, 5vw, 62px);
+  font-weight: 650;
+  letter-spacing: -0.055em;
+  line-height: 1.08;
+}
+
+.hero h1 span {
+  color: var(--lime);
+}
+
+.description {
+  max-width: 600px;
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.technologyTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 21px;
+}
+
+.technologyTags span {
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 75%, transparent);
+  color: var(--text);
+  font-size: 10px;
+}
+
+.codePanel,
+.exampleCard {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  background: linear-gradient(145deg, var(--surface-raised), var(--bg-raised));
+  box-shadow: 0 22px 60px color-mix(in srgb, var(--text) 8%, transparent);
+}
+
+.codePanel {
+  min-height: 218px;
+}
+
+.codeHeader {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-height: 42px;
+  align-items: center;
+  gap: 12px;
+  padding: 0 14px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 10px;
+}
+
+.codeHeader > svg {
+  margin-left: auto;
+  color: var(--blue);
+}
+
+.windowDots {
+  display: flex;
+  gap: 5px;
+}
+
+.windowDots i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--lime);
+}
+
+.windowDots i:nth-child(2) { background: var(--blue); }
+.windowDots i:nth-child(3) { background: var(--lime); }
+
+.codePanel pre,
+.exampleCard pre {
+  position: relative;
+  z-index: 1;
+  overflow-x: auto;
+  margin: 0;
+  padding: 18px;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.codeGlow {
+  position: absolute;
+  right: -45px;
+  bottom: -100px;
+  width: 230px;
+  height: 200px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--blue) 20%, transparent);
+  filter: blur(60px);
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.summaryCard {
+  position: relative;
+  display: grid;
+  min-height: 112px;
+  grid-template-columns: 38px 1fr;
+  grid-template-rows: auto 1fr auto;
+  column-gap: 11px;
+  padding: 15px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--surface) 84%, transparent);
+}
+
+.summaryIcon {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  grid-row: 1 / 4;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--lime) 27%, var(--line));
+  border-radius: 9px;
+  background: color-mix(in srgb, var(--lime) 13%, transparent);
+  color: var(--lime);
+}
+
+.summaryLabel {
+  align-self: center;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.summaryCard strong {
+  align-self: center;
+  color: var(--text);
+  font-size: 19px;
+  line-height: 1.25;
+}
+
+.summaryCard small {
+  grid-column: 2;
+  color: var(--subtle);
+  font-size: 9px;
+}
+
+.summaryCard .stageValue,
+.summaryCard .focusValue {
+  font-size: 13px;
+}
+
+.detailGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(255px, 0.8fr);
+  gap: 20px;
+  padding-top: 42px;
+}
+
+.sectionHeading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--lime);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.sectionHeading h2,
+.relatedLead h2 {
+  margin: 7px 0 0;
+  font-size: 21px;
+  font-weight: 580;
+  letter-spacing: -0.035em;
+}
+
+.viewAll {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--blue);
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.viewAll:hover {
+  color: var(--lime);
+}
+
+.technologyGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.technologyCard {
+  min-width: 0;
+  padding: 15px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--surface) 85%, transparent);
+}
+
+.technologyHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.technologyIcon {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--blue) 24%, var(--line));
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--blue) 10%, transparent);
+  color: var(--blue);
+}
+
+.technologyStage {
+  color: var(--subtle);
+  font-size: 8px;
+}
+
+.technologyStage[data-stage="Known"] { color: var(--lime); }
+.technologyStage[data-stage="Learning"] { color: var(--blue); }
+.technologyStage[data-stage="Exploring"] { color: var(--muted); }
+
+.technologyCard h3 {
+  margin: 13px 0 6px;
+  font-size: 13px;
+  font-weight: 560;
+}
+
+.technologyCard p {
+  min-height: 42px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+.progressTrack {
+  display: block;
+  height: 4px;
+  margin-top: 14px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--line-strong) 72%, transparent);
+}
+
+.progressTrack span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--blue), var(--lime));
+}
+
+.capabilitiesPanel {
+  align-self: start;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--surface) 85%, transparent);
+}
+
+.capabilitiesPanel .sectionHeading {
+  margin-bottom: 15px;
+}
+
+.capabilitiesPanel ul {
+  display: grid;
+  gap: 13px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.capabilitiesPanel li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.capabilitiesPanel li > span {
+  display: grid;
+  width: 17px;
+  height: 17px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--lime) 15%, transparent);
+  color: var(--lime);
+}
+
+.projectsLink {
+  display: flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 20px;
+  border-radius: 8px;
+  background: var(--lime);
+  color: var(--lime-ink);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.examplesSection {
+  padding-top: 42px;
+}
+
+.exampleCard {
+  border-radius: 10px;
+}
+
+.exampleTitle {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--line);
+  color: var(--text);
+  font-size: 10px;
+}
+
+.exampleTitle svg {
+  color: var(--blue);
+}
+
+.relatedSection {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.7fr) 1.3fr;
+  align-items: center;
+  gap: 22px;
+  margin-top: 34px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+}
+
+.relatedLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.relatedLink,
+.backToSkills {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  gap: 7px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: 9px;
+  transition: border-color 150ms ease, color 150ms ease;
+}
+
+.relatedLink:hover,
+.backToSkills:hover {
+  border-color: color-mix(in srgb, var(--lime) 55%, transparent);
+  color: var(--text);
+}
+
+.backToSkills {
+  color: var(--blue);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .summaryGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .detailGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    width: min(100% - 32px, 1200px);
+  }
+
+  .hero {
+    gap: 25px;
+    padding-top: 32px;
+  }
+
+  .summaryGrid,
+  .technologyGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .technologyCard p {
+    min-height: 0;
+  }
+
+  .relatedSection {
+    grid-template-columns: 1fr;
+  }
+}

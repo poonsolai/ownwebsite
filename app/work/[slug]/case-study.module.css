@@ -1,0 +1,31 @@
+.caseStudyPage { position: relative; overflow: clip; isolation: isolate; }
+.pageGrid { position: absolute; inset: 0; z-index: -1; background-image: linear-gradient(to right, color-mix(in srgb, var(--line) 42%, transparent) 1px, transparent 1px), linear-gradient(to bottom, color-mix(in srgb, var(--line) 42%, transparent) 1px, transparent 1px), radial-gradient(ellipse at 68% 12%, color-mix(in srgb, var(--lime) 12%, transparent), transparent 38%); background-size: 48px 48px, 48px 48px, auto; mask-image: linear-gradient(to bottom, black, transparent 92%); pointer-events: none; }
+.content { width: min(100% - 112px, 1120px); margin: 0 auto; }
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) 230px; gap: 24px; align-items: center; padding: 76px 0 42px; border-bottom: 1px solid var(--line); }
+.heroCopy { max-width: 760px; }
+.eyebrow { margin: 0; color: var(--subtle); font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em; line-height: 1.6; display: flex; align-items: center; gap: 10px; }
+.eyebrow > span { width: 6px; height: 6px; background: var(--lime); }
+.hero h1 { margin: 22px 0 0; font-size: clamp(42px, 5vw, 62px); line-height: 1.05; font-weight: 420; }
+.heroIntro { max-width: 620px; margin: 22px 0 0; color: var(--muted); font-size: 14px; line-height: 1.85; }
+.heroMeta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.heroMeta span { display: inline-flex; padding: 8px 10px; border: 1px solid var(--line); background: var(--bg-raised); color: var(--text); font-size: 11px; }
+.heroPanel { position: relative; display: flex; min-height: 220px; align-items: end; overflow: hidden; padding: 18px; border: 1px solid var(--line); background: color-mix(in srgb, var(--surface) 60%, transparent); }
+.heroPanel::after { position: absolute; z-index: 1; inset: 0; content: ""; background: linear-gradient(180deg, transparent 38%, rgba(0, 0, 0, 0.7) 100%); pointer-events: none; }
+.heroPanel img { object-fit: cover; }
+.heroPanel span { position: relative; z-index: 2; color: white; font-family: var(--font-mono); font-size: 8px; letter-spacing: 0.1em; text-transform: uppercase; }
+.heroPanel strong { font-size: 22px; font-weight: 420; }
+.layout { display: grid; gap: 18px; padding: 40px 0; }
+.section { display: grid; gap: 14px; padding: 24px 0; border-bottom: 1px solid var(--line); }
+.section h2 { margin: 0; font-size: 26px; font-weight: 420; }
+.section p, .section li { color: var(--muted); line-height: 1.9; }
+.section ul { margin: 0; padding-left: 18px; display: grid; gap: 10px; }
+.tagRow { display: flex; flex-wrap: wrap; gap: 10px; }
+.tagRow span { display: inline-flex; padding: 8px 10px; border: 1px solid var(--line); background: var(--bg-raised); color: var(--text); }
+.gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.galleryItem { display: grid; place-items: center; min-height: 170px; border: 1px solid var(--line); background: linear-gradient(135deg, color-mix(in srgb, var(--surface) 60%, transparent), color-mix(in srgb, var(--lime) 10%, transparent)); text-align: center; }
+.galleryItem span { max-width: 180px; color: var(--muted); line-height: 1.7; }
+.links { display: flex; flex-wrap: wrap; gap: 18px; }
+.links a, .backLink, .nextLink { display: inline-flex; align-items: center; gap: 8px; }
+.footer { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 18px 0 0; border-top: 1px solid var(--line); }
+.backLink, .nextLink { color: var(--text); }
+@media (max-width: 980px) { .content { width: min(100% - 38px, 1120px); } .hero { grid-template-columns: 1fr; } .gallery { grid-template-columns: 1fr; } .footer { flex-direction: column; align-items: flex-start; } }
